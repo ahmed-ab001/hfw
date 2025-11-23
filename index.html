@@ -133,28 +133,23 @@
       </div>
     </footer>
 
+    <script type="module" src="./app.js"></script>
     <script>
-  const form = document.getElementById("contact-form");
-  const iframe = document.getElementById("hidden_iframe");
+      const form = document.getElementById("contact-form");
+      const iframe = document.getElementById("hidden_iframe");
 
-  iframe.onload = function () {
-    // Clear form fields
-    form.reset();
+      // When the iframe loads → submission finished
+      iframe.onload = function () {
+        // Clear form
+        form.reset();
 
-    // Show popup
-    const popup = document.getElementById("success-popup");
-    popup.style.display = "flex";
+        // Show success popup
+        document.getElementById("success-popup").style.display = "flex";
+      };
 
-    // Auto-close after 5 seconds
-    setTimeout(() => {
-      popup.style.display = "none";
-    }, 5000);
-  };
-
-  function closePopup() {
-    document.getElementById("success-popup").style.display = "none";
-  }
-</script>
-
+      function closePopup() {
+        document.getElementById("success-popup").style.display = "none";
+      }
+    </script>
   </body>
 </html>
