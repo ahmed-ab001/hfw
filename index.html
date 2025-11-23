@@ -45,10 +45,16 @@
       <section id="contact" class="fade-in-up">
         <h2>Contact Us</h2>
         <div class="card contact-card">
+          <iframe
+            name="hidden_iframe"
+            id="hidden_iframe"
+            style="display: none"
+          ></iframe>
           <form
             id="contact-form"
             action="https://formsubmit.co/abdulahmed81477@gmail.com"
             method="POST"
+            target="hidden_iframe"
           >
             <input
               type="hidden"
@@ -74,6 +80,12 @@
               </button>
             </div>
           </form>
+          <p
+            id="success-msg"
+            style="display: none; color: green; margin-top: 10px"
+          >
+            ✔ Message sent successfully!
+          </p>
         </div>
       </section>
       <div class="social-follow fade-in-up">
@@ -113,5 +125,10 @@
     </footer>
 
     <script type="module" src="./app.js"></script>
+    <script>
+      document.getElementById("contact-form").addEventListener("submit", () => {
+        document.getElementById("success-msg").style.display = "block";
+      });
+    </script>
   </body>
 </html>
