@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HFW — Admin Panel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body id="admin-page">
+
+<header class="site-header fade-in-up">
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo">HF</div>
+      <div class="brand-text">
+        <strong>Hunger Free Welfare</strong>
+        <small>Admin Dashboard</small>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Back to Site</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container admin-main">
+
+  <!-- LOGIN -->
+  <section id="auth-area" class="fade-in-up">
+    <h2>Admin Login</h2>
+    <div class="card">
+      <form id="login-form">
+        <label>Email</label>
+        <input id="adminEmail" type="email" autocomplete="username" required>
+
+        <label>Password</label>
+        <input id="adminPass" type="password" autocomplete="current-password" required>
+
+        <p class="muted small">
+          Default login: <b>admin@hfw.org</b> / <b>1234</b>
+        </p>
+
+        <div class="form-actions">
+          <button class="btn" type="submit">Login</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ADMIN UI -->
+  <section id="admin-ui" hidden class="fade-in-up">
+    <div class="card">
+      <div class="admin-top">
+        <h2>Manage Activities</h2>
+        <button id="signout" class="btn-ghost">Logout</button>
+      </div>
+
+      <section class="admin-section">
+        <h3>Add Activity</h3>
+
+        <form id="activity-form">
+          <label>Title</label>
+          <input id="act-title" required>
+
+          <label>Date & Time</label>
+          <input id="act-datetime" type="datetime-local" required>
+
+          <label>Description</label>
+          <textarea id="act-desc" rows="4" required></textarea>
+
+          <label>Photos (multiple)</label>
+          <input id="act-photos" type="file" accept="image/*" multiple>
+
+          <label>Video (optional)</label>
+          <input id="act-video" type="file" accept="video/*">
+
+          <label>YouTube Link (optional)</label>
+          <input id="act-youtube" type="url">
+
+          <div class="form-actions">
+            <button class="btn" type="submit">Save Activity</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="admin-section">
+        <h3>Existing Activities</h3>
+        <div id="activity-admin-list" class="admin-list"></div>
+      </section>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer fade-in-up">
+  <div class="container">
+    <strong>Hunger Free Welfare</strong>
+    <div class="muted">Admin Area</div>
+  </div>
+</footer>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>

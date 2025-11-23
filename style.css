@@ -1,0 +1,493 @@
+/* =========================
+   RESET & GLOBAL
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --olive: #556B2F;
+  --olive-light: #6B8E23;
+  --bg-light: #F4F6ED;
+  --gray: #666666;
+}
+
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-light);
+  color: #222;
+  line-height: 1.5;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+}
+
+/* Containers */
+.container {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =========================
+   HEADER & NAVBAR
+========================= */
+.site-header {
+  background: var(--olive);
+  color: #fff;
+  padding: 16px 0;
+  box-shadow: 0 2px 5px #0003;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--olive);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.brand-text small {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* DESKTOP NAV SPACING */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;    /* ← more spacing on desktop */
+}
+nav a{
+  color: #fff;
+}
+
+/* Navigation */
+@media (max-width: 700px) {
+
+  /* Keep header tidy */
+  .nav {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  /* Turn nav into 4 equal buttons */
+  nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* 4 equal columns */
+    gap: 6px;
+  }
+
+  nav a {
+    text-align: center;
+    background: var(--olive);
+    padding: 8px 0;
+    border-radius: 6px;
+    font-size: 13px;
+    /* border: 1px solid #fff3; */
+    color: #fff;
+  }
+}
+
+
+nav a:hover {
+  text-decoration: none;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn {
+  background: var(--olive);
+  color: #fff;
+  border: none;
+}
+
+.btn:hover {
+  background: var(--olive-light);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-ghost.small {
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+.btn-ghost.btn-small {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+main section {
+  padding: 2.2rem 0;
+}
+
+h2 {
+  font-size: 24px;
+  color: var(--olive);
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  color: var(--gray);
+  margin-bottom: 10px;
+}
+
+.muted {
+  color: whitesmoke;
+}
+
+.small {
+  font-size: 13px;
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  padding: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #0002;
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+.contact-card {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 9px;
+  border-radius: 6px;
+  border: 2px solid var(--olive-light);
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+/* =========================
+   ACTIVITIES GRID
+========================= */
+/* =========================
+   ACTIVITIES GRID
+========================= */
+.events-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+
+.event-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #0002;
+}
+
+/* spacing for paragraphs inside each activity */
+.event-card p {
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.event-title {
+  font-weight: bold;
+  font-size: 17px;
+  color: var(--olive);
+}
+
+.event-date {
+  color: var(--gray);
+  font-size: 14px;
+}
+
+.event-desc {
+  font-size: 15px;
+}
+
+/* Media section inside card */
+.media-section {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.media-section {
+  margin-top: 14px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.media-section video,
+.media-section iframe {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* =========================
+   CAROUSEL
+========================= */
+/* FIX — make carousel visible */
+/* CAROUSEL FIX */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  height: auto;             /* auto height */
+  background: #fff;
+  border-radius: 10px;
+}
+
+.carousel-inner {
+  display: flex;
+  width: 100%;
+}
+
+.carousel-item {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-item img {
+  width: 80%;               /* fill width */
+  height: auto;              /* auto height */
+  object-fit: contain;       /* keep full image */
+  display: block;
+  border-radius: 10px;
+}
+
+.event-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 8px #0002;
+}
+
+
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffffc9;
+  border: none;
+  font-size: 24px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.carousel-prev {
+  left: 8px;
+}
+
+.carousel-next {
+  right: 8px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.site-footer {
+  background: var(--olive);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+/* =========================
+   ADMIN PAGE
+========================= */
+.admin-main {
+  padding-top: 2.2rem;
+  padding-bottom: 2.2rem;
+}
+
+.admin-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.admin-section {
+  margin-top: 1.4rem;
+}
+
+/* Admin form */
+#activity-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#activity-form input,
+#activity-form textarea {
+  font-size: 14px;
+}
+
+.admin-list {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-list-item {
+  background: #fff;
+  padding: 0.9rem;
+  border-radius: 8px;
+  box-shadow: 0 0 6px #0001;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-item-meta {
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.admin-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 700px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .admin-list-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    font-size: 13px;
+  }
+}
+
+.social-follow {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.follow-heading {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--olive);
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-link img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-link img:hover {
+  transform: scale(1.15);
+}

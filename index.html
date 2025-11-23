@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Hunger Free Welfare — Activities</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="site-header fade-in-up">
+      <div class="container nav">
+        <div class="brand">
+          <div class="logo">HFW</div>
+          <div class="brand-text">
+            <strong>Hunger Free Welfare</strong><br />
+            <small>Serve • Support • Sustain</small>
+          </div>
+        </div>
+        <nav>
+          <a href="#activities">Activities</a>
+          <a href="#mission">Mission</a>
+          <a href="#contact">Contact</a>
+          <a href="admin.html" class="btn-ghost small">Admin</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="activities" class="fade-in-up">
+        <h2>Our Activities</h2>
+        <p class="section-subtitle">Latest initiatives by our volunteers.</p>
+        <div id="activity-list" class="events-grid"></div>
+      </section>
+
+      <section id="mission" class="fade-in-up">
+        <h2>Our Mission</h2>
+        <p>
+          Hunger Free Welfare works to eradicate hunger through food
+          distribution, community kitchens, awareness drives and volunteer-led
+          initiatives.
+        </p>
+      </section>
+
+      <section id="contact" class="fade-in-up">
+        <h2>Contact Us</h2>
+        <div class="card contact-card">
+          <form
+            id="contact-form"
+            action="https://formsubmit.co/abdulahmed81477@gmail.com"
+            method="POST"
+          >
+            <!-- FormSubmit settings -->
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Inquiry from Hunger Free Welfare"
+            />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+
+            <label>Name</label>
+            <input id="name" name="name" required />
+
+            <label>Email</label>
+            <input id="email" name="email" type="email" required />
+
+            <label>Message</label>
+            <textarea id="message" name="message" rows="3" required></textarea>
+
+            <div class="form-actions">
+              <button class="btn" type="submit">Send</button>
+              <button type="button" class="btn" id="clear-contact">
+                Clear
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <div class="social-follow fade-in-up">
+        <h3 class="follow-heading">Follow Us On</h3>
+
+        <div class="social-icons">
+          <a
+            href="https://www.instagram.com/hunger_free_welfare_?igsh=ZGNqNTY1anJubHQ1"
+            target="_blank"
+            class="social-link"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+              alt="Instagram"
+            />
+          </a>
+
+          <a
+            href="https://www.facebook.com/profile.php?id=100092046743786"
+            target="_blank"
+            class="social-link"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+              alt="Facebook"
+            />
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer fade-in-up">
+      <div class="container">
+        <strong>Hunger Free Welfare</strong>
+        <div class="muted">info@hfwelfare.org</div>
+      </div>
+    </footer>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
