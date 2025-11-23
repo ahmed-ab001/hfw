@@ -316,11 +316,12 @@ function initContactForm() {
 
   if (!form) return;
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    alert("Message sent!");
-    form.reset();
-  });
+  // NO preventDefault here
+form.addEventListener("submit", () => {
+  setTimeout(() => {
+    console.log("Form submitted");
+  }, 100);
+});
 
   clearBtn.addEventListener("click", () => form.reset());
 }
