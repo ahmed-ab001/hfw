@@ -66,13 +66,23 @@
             <input type="hidden" name="_template" value="table" />
 
             <label>Name</label>
-            <input id="name" name="name" required />
+            <input id="name" name="name" placeholder="Enter Your Name" required />
 
             <label>Email</label>
-            <input id="email" name="email" type="email" required />
+            <input id="email" name="email" type="email" placeholder="Enter Email" required />
+
+            <label>Phone Number</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              pattern="[0-9]{10}"
+              placeholder="Enter 10-digit Mobile Number"
+              required
+            />
 
             <label>Message</label>
-            <textarea id="message" name="message" rows="3" required></textarea>
+            <textarea id="message" name="message" rows="3" placeholder="Type Your Message Here" required></textarea>
 
             <div class="form-actions">
               <button class="btn" type="submit">Send</button>
