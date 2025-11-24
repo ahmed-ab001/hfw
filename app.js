@@ -291,7 +291,7 @@ function initAdminPage() {
       `;
 
       const delBtn = document.createElement("button");
-      delBtn.className = "btn-ghost btn-small";
+      delBtn.className = "btn";
       delBtn.textContent = "Delete";
 
       delBtn.onclick = async () => {
