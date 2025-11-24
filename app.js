@@ -316,15 +316,35 @@ function initContactForm() {
 
   if (!form) return;
 
-  // NO preventDefault here
-form.addEventListener("submit", () => {
-  setTimeout(() => {
-    console.log("Form submitted");
-  }, 100);
-});
+  // GOOGLE SHEETS WEBHOOK URL (replace this)
+  const SHEETS_WEBHOOK = "https://script.google.com/macros/s/AKfycbwlqjeJgUmwxWszNNLfJ2Rp0PGIXZxbF3PM9RkbwcinR24HLqw-E21sUVZvEzIgpM9T/exec";
+
+  form.addEventListener("submit", () => {
+    // Collect form values
+    const payload = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone")?.value || "", // optional
+      message: document.getElementById("message").value,
+    };
+
+    // Send to Google Sheets WITHOUT stopping the form submission
+    fetch(SHEETS_WEBHOOK, {
+      method: "POST",
+      body: JSON.stringify(payload),
+    })
+    .then(() => console.log("Saved to Google Sheets"))
+    .catch(() => console.warn("Failed to save to Google Sheets"));
+
+    // FormSubmit email continues normally
+    setTimeout(() => {
+      console.log("Form submitted");
+    }, 100);
+  });
 
   clearBtn.addEventListener("click", () => form.reset());
 }
+
 
 /* ==========================================
    ANIMATIONS
